@@ -173,6 +173,131 @@
 					"body": "{\n    \"error\": false,\n    \"message\": \"User Registered Successfully\",\n    \"data\": {\n        \"name\": \"Qazi\",\n        \"email\": \"test@gmail.com\",\n        \"password\": \"12345678\",\n        \"updated_at\": \"2022-07-06T12:35:29.000000Z\",\n        \"created_at\": \"2022-07-06T12:35:29.000000Z\",\n        \"id\": 3\n    }\n}"
 				}
 			]
+		},
+		{
+			"name": "2) User-Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "qazi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2) User-Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "qazi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 06 Jul 2022 12:57:03 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 06 Jul 2022 12:57:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.19"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": false,\n    \"message\": \"Login Successful\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Qazi\",\n        \"email\": \"qazi@gmail.com\",\n        \"email_verified_at\": null,\n        \"password\": \"$2y$10$32./tlUe0sUjFEjunbjDSu4NI1MK19Hywj338qfxteGusbZ1v6RFO\",\n        \"remember_token\": null,\n        \"created_at\": \"2022-07-06T12:57:00.000000Z\",\n        \"updated_at\": \"2022-07-06T12:57:00.000000Z\",\n        \"jwt_auth_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3VzZXIvcmVnaXN0ZXIiLCJpYXQiOjE2NTcxMTIyMjAsImV4cCI6MTY1NzExNTgyMCwibmJmIjoxNjU3MTEyMjIwLCJqdGkiOiIyWHZPYTFac0pBaFJqUkY4Iiwic3ViIjoiNiIsInBydiI6IjQ2YWI3MmVhZTA4MmQyNDU5Zjg5ZTg3Nzc4ZDA4YTQyNmIwY2QzMWEiLCJpc19jaXRpemVuIjp0cnVlfQ.lHHbNHXsXsZiZ3MuZmSusqyB68QAj4dRqLmArYrVK_E\"\n    }\n}"
+				}
+			]
 		}
 	]
 }
