@@ -11,11 +11,31 @@
  Target Server Version : 100516
  File Encoding         : 65001
 
- Date: 06/07/2022 18:04:06
+ Date: 07/07/2022 00:01:24
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for cart
+-- ----------------------------
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE `cart`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `session_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `user_id` int NULL DEFAULT NULL,
+  `product_id` int NULL DEFAULT NULL,
+  `qty` int NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  `deleted_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of cart
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -93,6 +113,34 @@ CREATE TABLE `personal_access_tokens`  (
 -- ----------------------------
 -- Records of personal_access_tokens
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for products
+-- ----------------------------
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  `deleted_at` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of products
+-- ----------------------------
+INSERT INTO `products` VALUES (1, 'Apple', 'Fruit', 'This is test description for Apple', '1.jpg', '2022-07-06 22:55:47', '2022-07-06 18:44:33', '2022-07-06 18:44:33');
+INSERT INTO `products` VALUES (2, 'Banana', 'Fruit', 'This is test description for Banana', '1.jpg', '2022-07-06 22:55:47', '2022-07-06 22:55:47', NULL);
+INSERT INTO `products` VALUES (3, 'Orange', 'Fruit', 'This is test description for Orange', '1.jpg', '2022-07-06 22:55:47', '2022-07-06 22:55:47', NULL);
+INSERT INTO `products` VALUES (4, 'Peach', 'Fruit', 'This is test description for Peach', '1.jpg', '2022-07-06 22:55:47', '2022-07-06 22:55:47', NULL);
+INSERT INTO `products` VALUES (5, 'Tomato', 'Vegitable', 'This is test description for Tomato', '1.jpg', '2022-07-06 22:55:47', '2022-07-06 22:55:47', NULL);
+INSERT INTO `products` VALUES (6, 'Onion', 'Vegitable', 'This is test description for Onion', '1.jpg', '2022-07-06 22:55:47', '2022-07-06 22:55:47', NULL);
+INSERT INTO `products` VALUES (7, 'Potato', 'Vegitable', 'This is test description for Potato', '1.jpg', '2022-07-06 22:55:47', '2022-07-06 22:55:47', NULL);
+INSERT INTO `products` VALUES (8, 'Test Product', 'fruit', 'this is test description for testing purpose', NULL, '2022-07-06 18:29:05', '2022-07-06 18:29:05', NULL);
 
 -- ----------------------------
 -- Table structure for users
