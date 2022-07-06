@@ -16,8 +16,8 @@ use App\Http\Controllers\API\ProductApiController;
 */
 
 Route::controller(UserApiController::class)->prefix('user')->group(function (){
-    Route::post('login','login');
-    Route::post('register','register');
+    Route::post('login','login')->middleware(['throttle:3,10']); //rate limiter 3hit/10min
+    Route::post('register','register')->middleware(['throttle:3,10']); //rate limiter 3hit/10min
 });
 
 Route::controller(ProductApiController::class)->prefix('product')->group(function (){
